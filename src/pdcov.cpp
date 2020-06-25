@@ -12,11 +12,11 @@ using namespace arma;
 
 //[[Rcpp::export]]
 double pdcov(const arma::mat &x,const arma::mat &y,const arma::mat &z,std::string type="V"){
-  
+
   if(x.n_cols==1&&y.n_cols==1&&z.n_cols==1){
     return pdcov1v1v1(x,y,z,type);
   }
-  
+
   int n = x.n_rows;
   //int p = x.n_cols, q = y.n_cols;
   arma::mat Dx(n,n),Dy(n,n),Dz(n,n);
@@ -25,17 +25,17 @@ double pdcov(const arma::mat &x,const arma::mat &y,const arma::mat &z,std::strin
   centering_from_data(z,Dz,type);
   Dx = Dx - arma::sum(arma::sum(Dx%Dz))/arma::sum(arma::sum(Dz%Dz))*Dz;
   Dy = Dy - arma::sum(arma::sum(Dy%Dz))/arma::sum(arma::sum(Dz%Dz))*Dz;
-  int d = type=="V"?n*n:n*(n-3);
+  int d = type=="V"?(n*(n+0.0)):(n*(n-3.0));
   return arma::sum(arma::sum(Dx%Dy))/d;
 }
 
 //[[Rcpp::export]]
 double pdcor(const arma::mat &x,const arma::mat &y,const arma::mat &z,std::string type="V"){
-  
+
   if(x.n_cols==1&&y.n_cols==1&&z.n_cols==1){
     return pdcor1v1v1(x,y,z,type);
   }
-  
+
   int n = x.n_rows;
   //int p = x.n_cols, q = y.n_cols;
   arma::mat Dx(n,n),Dy(n,n),Dz(n,n);
@@ -44,7 +44,7 @@ double pdcor(const arma::mat &x,const arma::mat &y,const arma::mat &z,std::strin
   centering_from_data(z,Dz,type);
   Dx = Dx - arma::sum(arma::sum(Dx%Dz))/arma::sum(arma::sum(Dz%Dz))*Dz;
   Dy = Dy - arma::sum(arma::sum(Dy%Dz))/arma::sum(arma::sum(Dz%Dz))*Dz;
-  int d = type=="V"?n*n:n*(n-3);
+  int d = type=="V"?(n*(n+0.0)):(n*(n-3.0));
   double pdc = sum(sum(Dx%Dy))/d;
   double pdx = sum(sum(Dx%Dx))/d;
   double pdy = sum(sum(Dy%Dy))/d;

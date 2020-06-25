@@ -1,4 +1,4 @@
-ecbfd36357cde88b8d24adf5ccb88fe8 *DESCRIPTION
+22871ac46efe18b0b333c0998e9eec94 *DESCRIPTION
 db589a849e2b8aeac7a7f82007142007 *NAMESPACE
 118f440bd14399d057ebaf974575b14c *R/RcppExports.R
 b63aa5bc25a01f87c36b3b6c1511aafc *R/Ttest.R
@@ -21,11 +21,11 @@ a2a13c78dc360887562f9be715e375b5 *man/perm_test.Rd
 98120ca197888e4dadd09aa2a2c948a2 *src/RcppExports.cpp
 8d3e039834805679da905ba3977d3639 *src/bit.cpp
 74e09cce6a85e9fa5016e16f1e3ec3a4 *src/centering.cpp
-247247603ae40656848c74f7fdbcae58 *src/dcov.cpp
+6116e5e18d9c9e743fb3fcbd4206e016 *src/dcov.cpp
 afafa46f5fe63b7a108f8777bfda8b2a *src/dcov.h
-692319c84ea98b96f5e1e59f77130225 *src/dcov1v1.cpp
+91c9439a02eb78768a5469d8ac258c29 *src/dcov1v1.cpp
 31b68095a9801f2c5d1689a739373533 *src/mdcov.cpp
 f9330445f516119674bffba08d866380 *src/pcov.cpp
-00ec1477dae820106fb167405ea33105 *src/pdcov.cpp
-79ae3da2f4eb10366bd1f1ceca36cb7b *src/pdcov1v1.cpp
+1e1cc53a914add6ea187cb05a5b7e751 *src/pdcov.cpp
+a169f9f0782f2e868598db3c60b5eb9c *src/pdcov1v1.cpp
 9a136c6ffedd4845afc5af9ae9bd3182 *src/perm_test.cpp

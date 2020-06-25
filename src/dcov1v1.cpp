@@ -10,17 +10,17 @@ using namespace std;
 using namespace arma;
 
 void update(arma::vec& bit, int n, int i, double val){
-  
+
   i += 1;
   while(i<=n){
     bit[i]+=val;
     i += i&-i;
   }
-  
+
 }
 
 double psum(arma::vec& bit, int i){
-  
+
   i += 1;
   double sum = 0;
   while(i>0){
@@ -28,7 +28,7 @@ double psum(arma::vec& bit, int i){
     i -= (i&-i);
   }
   return sum;
-  
+
 }
 
 
@@ -99,9 +99,9 @@ double dcov1v1(arma::vec x,arma::vec y,std::string type="V"){
   int n = x.size();
   double d1,d2,d3;
   if(type=="U"){
-    d1 = n*(n-3); d2 = (n-2)*(1-3.0/n); d3 = (1-1.0/n)*(1-2.0/n)*(1-3.0/n);
+    d1 = n*(n-3.0); d2 = (n-2)*(1-3.0/n); d3 = (1-1.0/n)*(1-2.0/n)*(1-3.0/n);
   }else{
-    d1 = n*n; d2 = n; d3 = 1;
+    d1 = n*(n+0.0); d2 = n; d3 = 1;
   }//else{
   //  printf("error: type should be U or V.\n");
   //  return(datum::nan);
@@ -134,9 +134,9 @@ double dcor1v1(arma::vec x,arma::vec y,std::string type="V"){
   int n = x.size();
   double d1,d2,d3;
   if(type=="U"){
-    d1 = n*(n-3); d2 = (n-2)*(1-3.0/n); d3 = (1-1.0/n)*(1-2.0/n)*(1-3.0/n);
+    d1 = n*(n-3.0); d2 = (n-2)*(1-3.0/n); d3 = (1-1.0/n)*(1-2.0/n)*(1-3.0/n);
   }else{
-    d1 = n*n; d2 = n; d3 = 1;
+    d1 = n*(n+0.0); d2 = n; d3 = 1;
   }//else{
   //  printf("error: type should be U or V.\n");
   //  return(datum::nan);

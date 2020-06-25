@@ -17,7 +17,7 @@ double dcov(const arma::mat &x,const arma::mat &y, std::string type="V"){
   if(p==1&&q==1){
     return dcov1v1(x,y,type);
   }else{
-    int d = type=="V"?(n*n):(n*(n-3));
+    int d = type=="V"?(n*(n+0.0)):(n*(n-3.0));
     arma::mat Dx(n,n), Dy(n,n);
     centering_from_data(x,Dx,type);
     centering_from_data(y,Dy,type);
@@ -33,7 +33,7 @@ double dcor(const arma::mat &x,const arma::mat &y, std::string type){
   if(p==1&&q==1){
     return dcor1v1(x,y,type);
   }else{
-    int d = type=="V"?(n*n):(n*(n-3));
+    int d = type=="V"?(n*(n+0.0)):(n*(n-3.0));
     arma::mat Dx(n,n), Dy(n,n);
     centering_from_data(x,Dx,type);
     centering_from_data(y,Dy,type);
